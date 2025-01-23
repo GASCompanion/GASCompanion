@@ -37,6 +37,11 @@ export const remarkRewritePullRequestImageAssetsUrl = (imagesToDownload) => {
 						node.url = `./${url.replace(assetsPattern, '').replace('/', '-')}.png`;
 					}
 
+					if (url.startsWith(`https://github.com/user-attachments/assets/`)) {
+						imagesToDownload.push(url);
+						node.url = `./${url.replace(`https://github.com/user-attachments/assets/`, '').replace('/', '-')}.png`;
+					}
+
 					return;
 				}
 			});

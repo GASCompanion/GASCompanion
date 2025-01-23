@@ -18,6 +18,7 @@ const fetchImage = (image, dirname) => {
 	return new Promise((resolve, reject) => {
 		const filename = image
 			.replace(assetsPattern, '')
+			.replace(`https://github.com/user-attachments/assets/`, '')
 			.replace('/', '-');
 
 		const downloadStream = goat.stream(image, {
@@ -43,7 +44,6 @@ export const fetchPullRequest = async ({ api }) => {
 };
 
 export const handlePullRequestLink = async (output, tag, link) => {
-	console.log(`handlePullRequestLink: output = ${output}, tag = ${tag}, link = ${link}`)
 	const result = await fetchPullRequest(link);
 	const { number } = result.body;
 	const dirname = path.join(path.dirname(output), `pull/${number}`);
@@ -80,7 +80,7 @@ export const getPullRequestContent = async (output, tag, result) => {
 		.process(body || '');
 
 	const promises = imagesToDownload.map(image => fetchImage(image, path.join(path.dirname(output), `pull/${number}`)));
-	Promise.all(promises).catch(console.error);
+	await Promise.all(promises).catch(console.error);
 
 	return `---
 title: "Pull Request #${number}"
