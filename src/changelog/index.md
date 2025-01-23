@@ -18,6 +18,16 @@ They can often serve as the basics of documentation before the website is update
 </div>
 
 
+## [6.1.1](https://github.com/GASCompanion/GASCompanion-Plugin/releases/tag/6.1.1) - Oct 10, 2024
+
+<!-- Release notes generated using configuration in .github/release.yml at ue5-main -->
+
+*   Fixing compilation error and deprecation warnings for 5.5 preview 1 in [#92](./pull/92)
+
+**Full Changelog**: <https://github.com/GASCompanion/GASCompanion-Plugin/compare/6.1.0...6.1.1>
+
+
+  
 ## [6.1.0](https://github.com/GASCompanion/GASCompanion-Plugin/releases/tag/6.1.0) - Jun 26, 2024
 
 ##### New Features 🎉
@@ -37,7 +47,7 @@ They can often serve as the basics of documentation before the website is update
 *   Fixed UGSCUserWidget::GetAttributeValue() usage with invalid attribute preventing crash from happening in [#90](./pull/90)
 *   Tweaked and fix comment for `UGSCUserWidget::GetAttributeValue()` in [#90](./pull/90)
 
-**Full Changelog**: <https://github.com/GASCompanion/GASCompanion-Plugin/compare/6.0.2...6.1.0>
+**Full Changelog**: <https://github.com/GASCompanion/GASCompanion-Plugin/compare/6.0.2...6.1>
 
 
   
@@ -419,4 +429,4 @@ Internal: Setting up CI/CD process on github to check package build is successfu
   
 ---
 
-Updated Jun 26, 2024
+Updated Jan 23, 2025
