@@ -12,11 +12,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - name: Build
-        uses: TartanLlama/actions-eleventy@master
-        with:
-          args: --config=.eleventy.cjs
-          install_dependencies: true
+      # - name: Build
+      #   uses: TartanLlama/actions-eleventy@master
+      #   with:
+      #     args: --config=.eleventy.cjs
+      #     install_dependencies: true
+
+      - name: Build eleventy
+        run: |
+          npx -y @11ty/eleventy --config=.eleventy.cjs
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
