@@ -20,7 +20,9 @@ jobs:
 
       - name: Build eleventy
         run: |
-          npx -y @11ty/eleventy --config=.eleventy.cjs
+          npm install -g @11ty/eleventy --unsafe-perm
+          npm install
+          npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
